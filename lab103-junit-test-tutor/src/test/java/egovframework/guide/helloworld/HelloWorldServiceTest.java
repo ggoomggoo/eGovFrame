@@ -14,11 +14,13 @@ public class HelloWorldServiceTest {
 
 	@Resource(name = "helloworld")
 	public void setHelloWorld(HelloWorldService hello) {
+		// 
 		this.helloworld = hello;
 	}
 
 	@Test
 	public void SayHello() {
+		// 
 		assertEquals("Hello eGovFrame!!!", helloworld.sayHello());
 	}
 }
