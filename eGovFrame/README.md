@@ -1,1 +1,6 @@
-* 전자정부프레임워크 교육
+# 전자정부프레임워크 교육
+
+## 순서
+- ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\01.표준프레임워크개요\01.표준프레임워크개요.pdf
+- ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\02.개발환경\04.[참고]개발환경_실습교재.pdf
+- ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\02.개발환경\01.개발환경_교육교재.pdf
