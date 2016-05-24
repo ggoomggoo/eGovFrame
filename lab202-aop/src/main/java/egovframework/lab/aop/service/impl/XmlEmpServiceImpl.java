@@ -25,16 +25,16 @@ public class XmlEmpServiceImpl implements EmpService {
         empDAO.deleteEmp(empVO);
     }
 
-    public EmpVO selectEmp(EmpVO empVO) throws Exception {
-        EmpVO resultVO;
-        resultVO = empDAO.selectEmp(empVO);
-        
-        if(resultVO == null) {
-            throw new Exception("no data found!");
-        }
-        
-        return resultVO;
-    }
+	public EmpVO selectEmp(EmpVO empVO) throws Exception {
+		EmpVO resultVO;
+		resultVO = empDAO.selectEmp(empVO);
+		
+		if(resultVO == null) {
+			throw new Exception("no data found!");
+		}
+		
+		return resultVO;
+	}
 
     public List<EmpVO> selectEmpList() throws Exception {
         return empDAO.selectEmpList();
