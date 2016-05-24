@@ -26,10 +26,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import egovframework.rte.fdl.cmmn.exception.EgovBizException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:META-INF/spring/context-*" })
-@TransactionConfiguration(transactionManager = "txManager", defaultRollback = false)
-@Transactional
+@RunWith(SpringJUnit4ClassRunner.class) //
+@ContextConfiguration(locations = {"classpath*:META-INF/spring/context-*" }) //
+@TransactionConfiguration(transactionManager = "txManager", defaultRollback = false) //
+@Transactional //
 public class EmpServiceTest {
     
     // TODO [Step 3-1] EmpServiceTest 실행
