@@ -16,10 +16,11 @@ import egovframework.rte.fdl.idgnr.EgovIdGnrService;
 public class EmpServiceImpl extends EgovAbstractServiceImpl implements EmpService {
     
     // TODO [Step 2-3] EmpServiceImpl 작성 추가 
+    @Resource(name = "primaryTypeSequenceIds")
+    EgovIdGnrService egovIdGnrService;
 
-	
-
-	
+    @Resource(name = "empDAO")
+    private EmpDAO empDAO;          
 
 	public BigDecimal insertEmp(EmpVO empVO) throws Exception {
         // ID generation Service 를 사용하여 key 를 땀. 여기서
