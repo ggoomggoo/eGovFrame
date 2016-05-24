@@ -91,33 +91,7 @@ Step 1. XML 설정 방식의 Spring Bean 서비스 작성
  3) Annotation 을 적용한 Impl
 	. /lab201-ioc/src/main/java/egovframework/lab/ioc/service/impl/AnnotationEmpServiceImpl.java 를 작성한다.
 	/**************************************************************************************/
-	@Service("annotationEmpService")
-	public class AnnotationEmpServiceImpl implements EmpService {
 
-		@Resource(name = "annotationEmpDAO")
-		private AnnotationEmpDAO empDAO;
-
-		public void insertEmp(EmpVO empVO) throws Exception {
-			empDAO.insertEmp(empVO);
-		}
-
-		public void updateEmp(EmpVO empVO) throws Exception {
-			empDAO.updateEmp(empVO);
-		}
-
-		public void deleteEmp(EmpVO empVO) throws Exception {
-			empDAO.deleteEmp(empVO);
-		}
-
-		public EmpVO selectEmp(EmpVO empVO) throws Exception {
-			return empDAO.selectEmp(empVO);
-		}
-
-		public List<EmpVO> selectEmpList() throws Exception {
-			return empDAO.selectEmpList();
-		}
-
-	}
 	/**************************************************************************************/
 	. @Service 스테레오 타입 Annotation 을 사용하여 bean 설정하였음.
 	. @Resource (JSR250 표준) Annotation 을 사용하여 Dependency Bean(여기서는 AnnotationEmpDAO) 를 injection 하였음.
@@ -126,55 +100,7 @@ Step 1. XML 설정 방식의 Spring Bean 서비스 작성
  4) Annotation 을 적용한 DAO
 	. /lab201-ioc/src/main/java/egovframework/lab/ioc/service/impl/AnnotationEmpDAO.java 를 작성한다.
 	/**************************************************************************************/
-	@Repository("annotationEmpDAO")
-	public class AnnotationEmpDAO {
 
-		static List<EmpVO> list;
-
-		static {
-			list = new ArrayList<EmpVO>();
-			EmpVO empVO;
-			for (int i = 1; i <= 100; i++) {
-				empVO = new EmpVO();
-				empVO.setEmpNo(i);
-				empVO.setEmpName("EmpName " + i);
-				empVO.setJob("SALESMAN");
-				list.add(empVO);
-			}
-		}
-
-		public void insertEmp(EmpVO empVO) throws Exception {
-			list.add(empVO);
-			Collections.sort(list);
-		}
-
-		public void updateEmp(EmpVO empVO) throws Exception {
-			int index = Collections.binarySearch(list, empVO);
-			// 해당 데이터가 없는 경우 여기서는 ArrayIndexOutOfBoundsException 발생할 것임
-			EmpVO orgEmpVO = list.get(index);
-
-			orgEmpVO.setEmpName(empVO.getEmpName());
-			orgEmpVO.setJob(empVO.getJob());
-		}
-
-		public void deleteEmp(EmpVO empVO) throws Exception {
-			list.remove(Collections.binarySearch(list, empVO));
-			Collections.sort(list);
-		}
-
-		public EmpVO selectEmp(EmpVO empVO) throws Exception {
-			int index = Collections.binarySearch(list, empVO);
-
-			// list search 결과 해당값을 찾을 수 없으면 음수값
-			// (-(insertion point) - 1) 이 되돌려짐
-			return index < 0 ? null : list.get(index);
-		}
-
-		public List<EmpVO> selectEmpList() throws Exception {
-			return list;
-		}
-
-	}
 	/**************************************************************************************/
 	. xml 설정 방식의 예와 마찬가지로 DB 연동 없이 테스트를 위한 static 한 내부 데이터를 관리하며 CRUD 하는 예임.
 	. @Repository 스테레오 타입 Annotation 을 사용하여 bean 설정 하였음. (DAO 인 경우)
@@ -182,7 +108,7 @@ Step 1. XML 설정 방식의 Spring Bean 서비스 작성
  5) common 설정 파일 - component scan
 	. /lab201-ioc/src/test/resources/META-INF/spring/context-common.xml 를 작성한다.
 	/**************************************************************************************/
-		<context:component-scan base-package="egovframework" />
+		
 	/**************************************************************************************/
 
  6) Testcase 작성 (기존 Testcase 에서 DI 하는 서비스만 변경)
