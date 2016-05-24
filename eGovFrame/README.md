@@ -9,3 +9,4 @@
 - ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\03.실행환경\01.실행환경_실습교재(공통기반).pdf
 -- IoC, AOP
 - ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\03.실행환경\02.실행환경_교육교재(데이터처리).pdf
+- ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\03.실행환경\02.실행환경_실습교재(데이터처리).pdf
