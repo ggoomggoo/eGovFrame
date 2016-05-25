@@ -13,6 +13,12 @@
 <title><spring:message code="easaycompany.employeelist.title"/></title>
 <!-- Ajax Tags  -->
 <!--TODO [Step 4-2-03] ajaxtags 사용을 위한 script 코드를 import 한다. -->
+<script type="text/javascript" src="<c:url value='/ajaxtags/js/prototype.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/ajaxtags/js/scriptaculous/scriptaculous.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/ajaxtags/js/overlibmws/overlibmws.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/ajaxtags/js/ajaxtags.js'/>"></script>
+<link type="text/css" rel="stylesheet" href="<c:url value='/ajaxtags/css/ajaxtags.css'/>" />
+<link type="text/css" rel="stylesheet" href="<c:url value='/ajaxtags/css/displaytag.css'/>" />
 
 <script type="text/javascript">
 	
@@ -91,6 +97,10 @@
 </table>
 
 <!--Ajax Tags TODO [Step 4-2-04] ajaxtags 사용을 위한 ajax:autocomplete 코드를 생성한다.-->
+	<ajax:autocomplete
+		baseUrl="${pageContext.request.contextPath}/suggestName.do"
+		source="searchName" target="searchName" className="autocomplete"
+		minimumCharacters="1" />
 
 </body>
 </html>
