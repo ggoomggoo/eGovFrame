@@ -72,23 +72,32 @@ public class EmployeeController {
 
     // TODO [Step 4-3-01] 요청되는 insertEmployee.do 와 메소드를 매핑(RequestMapping)한다. 
     // 단 GET 방식(RequestMethod 를 통해 세팅) 에 대해서만 처리하다록 한다.
+    @RequestMapping(value="/insertEmployee.do", method=RequestMethod.GET)
     public String setupForm(Model model) {
         // TODO [Step 4-3-02]  먼저 아래 두라인을 지우고 employee 객체를 new 하지 말고 
         // 메소드 형태로 정의하여  ModelAttributes 를 이용하여 세팅하여보자.
-        Employee employee = new Employee();
-        model.addAttribute("employee", employee);
         return "addemployee";
     }
     
+	@ModelAttribute("employee")
+	public Employee defaultEmployee() {
+		return new Employee();
+	}
+    
     // TODO [Step 4-4-01] 요청되는 insertEmployee.do 와 메소드를 매핑(RequestMapping)한다. 
     // 단 POST 방식(RequestMethod 를 통해 세팅)에 대해서만 처리하다록 한다.   
+	@RequestMapping(value = "/insertEmployee.do", method = RequestMethod.POST)
     public String insertEmployee(@ModelAttribute Employee employee, BindingResult bindingResult, Model model) {
 
         // TODO [Step 4-4-02] DefaultBeanValidator의 validate 메소를  이용하여 employee 객체 값을 체크한다. 
         // 파라미터중 하나는 bindingResult 이다.
+		beanValidator.validate(employee, bindingResult);
 
         // TODO [Step 4-4-03] DefaultBeanValidator 를 실행한 결과  에러가 있을 경우(hasErrors())  
         // 원래 페이지(addemployee)를 다시 보여주고 에러 메세지를 뿌려준다.s
+		if (bindingResult.hasErrors()) {
+			return "addemployee";
+		}
 
         employeeService.insertEmployee(employee);
 
@@ -98,6 +107,10 @@ public class EmployeeController {
     // TODO [Step 4-3-03] deptInfoOneDepthCategory 객체를 ModelAttributes 를 이용하고 있다 아래를 완성하여라. 
     // getDepartmentIdNameList 는 Map<String, String> 타입을 리턴하고 있다. 
     // 또한 referenceDataOneDepthDept 메소드 도 Map<String, String> 타입을 리턴한다.
+	@ModelAttribute("deptInfoOneDepthCategory")
+	private Map<String, String> referenceDataOneDepthDept() {
+		return departmentService.getDepartmentIdNameList("1");
+	}
 
     
 

@@ -106,6 +106,10 @@
 </div>
 
 <!--Ajax Tags TODO [Step 4-4-04] addemployee.jsp 에서 ajaxtags 사용을 위한 ajax:select 코드를 생성한다.-->
+	<ajax:select
+		baseUrl="${pageContext.request.contextPath}/autoSelectDept.do"
+		parameters="depth=2,superdeptid={superdeptid}" source="superdeptid"
+		target="departmentid" emptyOptionName="Select model" />
 
 </body>
 </html>
