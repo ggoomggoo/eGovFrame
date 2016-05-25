@@ -38,6 +38,7 @@
         <property name="basenames">
             <list>
                 <value>messages.message-common</value>
+                <value>messages.message-temp</value>
             </list>
         </property>
     </bean>
