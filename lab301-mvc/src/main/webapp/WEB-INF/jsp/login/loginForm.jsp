@@ -12,7 +12,10 @@
 	<form:errors />
 	<table>
 		<tr>
+<%-- 		
 			<td><label for="id"><spring:message code="login.form.id" /></label></td>
+ --%>			
+			<td><label for="id"><spring:message code="msg.test" /></label></td>
 			<td><form:input id="id" path="id" /></td>
 			<td><form:errors path="id" /></td>
 		</tr>
