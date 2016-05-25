@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,9 @@ import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
 
 import egovframework.lab.com.authenticator.Authenticator;
 import egovframework.lab.web.model.LoginCommand;
@@ -23,6 +27,7 @@ import egovframework.lab.web.model.LoginType;
 // TODO [Step 1-3-2] LoginController.java 에 login 명의 객체에 대해 @SessionAttributes
 // 설정 하기
 // 이 부분은 login 객체를 Session 객체에 저장하는 방법이다.
+@SessionAttributes("login")
 public class LoginController {
 
 	private static final Logger LOGGER = LoggerFactory
@@ -87,6 +92,22 @@ public class LoginController {
 	@ModelAttribute("login")
 	protected Object referenceData4login() throws Exception {
 		return new LoginCommand();
+	}
+	
+	@RequestMapping(value = "/memberInfo.do")
+	public ModelAndView memberInfo(HttpSession httpSession) {
+		ModelAndView mav = new ModelAndView("login/memberInfo");
+		if (httpSession.getAttribute("login") != null) {
+			mav.addObject("login", httpSession.getAttribute("login"));
+		}
+		return mav;
+	}
+	
+	@RequestMapping(value = "/loginOut.do", method = RequestMethod.GET)
+	public String logOut(SessionStatus sessionStatus) {
+		if (!sessionStatus.isComplete())
+			sessionStatus.setComplete();
+		return "redirect:/loginProcess1.do";
 	}
 
 }
