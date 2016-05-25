@@ -10,3 +10,4 @@
 -- IoC, AOP
 - ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\03.실행환경\02.실행환경_교육교재(데이터처리).pdf
 - ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\03.실행환경\02.실행환경_실습교재(데이터처리).pdf
+- ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\03.실행환경\03.실행환경_교육교재(배치처리).pdf
