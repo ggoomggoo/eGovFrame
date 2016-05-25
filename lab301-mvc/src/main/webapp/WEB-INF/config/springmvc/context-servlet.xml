@@ -34,7 +34,6 @@
     <!-- set message source -->
 	<!-- TODO [Step 1-2-1] context-servlet.xml 설정 변경하기 : messageSource 활성화  -->  
     <!-- messageSource 활성화하는 부분 -->
-    <!--  
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
             <list>
@@ -42,5 +41,4 @@
             </list>
         </property>
     </bean>
-    -->
 </beans>
