@@ -1,1 +1,4 @@
-/lab201-ioc/
+*.class
+
+/target/
+/**/target/
