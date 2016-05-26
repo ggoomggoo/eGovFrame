@@ -27,9 +27,13 @@
                 <h1>Step3</h1>
 				<a href="/practice/step4.do" data-ajax="false" data-icon="arrow-r" class="ui-btn-right">Next</a>
 
-				<!-- tab Start --> 
-
-
+				<!-- tab Start -->
+				<div data-role="tabs">
+					<ul>
+						<li><a href="#simpleTap1" class="ui-btn-active">Panel</a></li>
+						<li><a href="#simpleTap2">Panel Widget</a></li>
+					</ul>
+				</div>
 				<!-- tab end -->
 
             </div>
@@ -37,7 +41,15 @@
 
             <!-- content start -->
             <div data-role="content">
-
+            	<div id="simpleTap1">
+            		<br>
+					<div class="ui-body-g" align="center">
+						<h4>Panel</h4>
+					</div>
+				</div>
+				<div id="simpleTap2">
+					<a href="#panelWidget" data-role="button">Panel Widget</a>
+				</div>
 			</div>
             <!-- content end -->
 
@@ -50,9 +62,19 @@
             <!-- footer end -->
 
 			<!-- panel start -->
-
-
-
+<!-- 			
+			<div data-role="panel" id="panelWidget">
+ -->			
+			<div data-role="panel" id="panelWidget" data-position="right" data-display="overlay" data-position-fixed="true">
+				<ul data-role="listview" data-theme="g">
+					<li><a href="/start.do">Start Page</a></li>
+					<li><a href="/tutor/step1.do" data-ajax="false">Step1</a></li>
+					<li><a href="/tutor/step2.do" data-ajax="false">Step2</a></li>
+					<li><a href="/tutor/step3.do" data-ajax="false">Step3</a></li>
+					<li><a href="/tutor/step4.do" data-ajax="false">Step4</a></li>
+					<li><a href="#" data-rel="close">Close</a></li>
+				</ul>
+			</div>
 			<!-- panel end -->
 
         </div>
