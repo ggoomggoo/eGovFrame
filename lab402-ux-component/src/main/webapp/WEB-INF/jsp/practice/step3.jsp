@@ -32,6 +32,9 @@
 					<ul>
 						<li><a href="#simpleTap1" class="ui-btn-active">Panel</a></li>
 						<li><a href="#simpleTap2">Panel Widget</a></li>
+						<li><a href="#">dummyTab</a></li>
+						<li><a href="">dummyTab</a></li>
+						<li><a href="#dummyTab">dummyTab</a></li>
 					</ul>
 				</div>
 				<!-- tab end -->
@@ -50,6 +53,11 @@
 				<div id="simpleTap2">
 					<a href="#panelWidget" data-role="button">Panel Widget</a>
 				</div>
+<!-- 				
+				<div id="dummyTab">
+					<a href="" data-role="button">dummyButton</a>
+				</div>
+ -->				
 			</div>
             <!-- content end -->
 
