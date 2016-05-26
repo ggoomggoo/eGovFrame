@@ -15,3 +15,4 @@
 - ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\04.모바일\01.모바일_프레임워크 이론.pdf
 -- slides.html5rocks.com-master
 - ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\04.모바일\02.모바일_실습교재(UX Component).pdf
+- ‪D:\Workspace\study\egovFrame\eGovFrame-3.5.1\textbook\04.모바일\04.모바일_DeviceAPI_실습교재.pdf
