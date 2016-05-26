@@ -51,6 +51,74 @@
 		
 
 		<a href="#" data-role="button" >Popup Widget</a>
+		
+		<br>
+		
+		<div data-role="fieldcontain">
+<!-- 			
+			<input type="text" name="text-basic" id="text-basic" value="">
+			<label for="text-basic">Text input:</label>
+ -->			
+			<label for="text-basic" class="ui-hidden-accessible">Text input:</label>
+			<input type="text" name="text-basic" id="text-basic" value="" placeholder="Text input">
+			<!-- <input type="text" name="text-basic" id="text-basic" value="" placeholder="Text input" disabled="disabled"> -->
+		</div>
+		
+		<label for="slidersingle">Rangeslider:</label>
+		<!-- <input type="range" name="slidersingle" id="slidersingle" min="0" max="10" value="2.5"> -->
+		<!-- <input type="range" name="slidersingle" id="slidersingle" min="0" max="10" value="2.5" step=".1"> -->
+		<!-- <input type="range" name="slidersingle" id="slidersingle" min="0" max="10" value="2.5" step=".1" data-theme="f"> -->
+		<input type="range" name="slidersingle" id="slidersingle" min="0" max="10" value="2.5" step=".1" data-theme="f" data-highlight="true" data-track-theme="g">
+		
+		<br>
+		
+		<div data-role="rangeslider">
+			<label for="range-a">Rangeslider:</label>
+			<input type="range" name="range-a" id="range-a" min="0" max="10" step=".1" value="2.5">
+			<label for="range-b">Rangeslider:</label>
+			<input type="range" name="range-b" id="range-b" min="0" max="10" step=".1" value="7.5">
+		</div>
+		
+		<h6>[Step 4-03] Gird</h6>
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<div class="ui-bar ui-bar-e">
+					<label for="slidersingle">Rangeslider:</label>
+					<input type="range" name="slidersingle" id="slidersingle" min="0" max="10" value="2.5" step=".1" data-theme="f"
+					data-highlight="true" data-track-theme="g">
+				</div>
+			</div>
+			<div class="ui-block-b">
+				<div class="ui-bar ui-bar-e">
+					<div data-role="rangeslider">
+						<label for="range-a">Rangeslider:</label>
+						<input type="range" name="range-a" id="range-a" min="0" max="10" value="2.5" step=".1">
+						<label for="range-b">Rangeslider:</label>
+						<input type="range" name="range-b" id="range-b" min="0" max="10" value="7.5" step=".1">
+					</div>
+				</div>
+			</div>
+		</div>		
+		
+		<h6>Grid</h6>
+		
+		<div class="ui-grid-solo">
+			<div class="ui-block-a">
+				<button type="button" data-theme="b">Grid Solo</button>
+			</div>
+		</div>
+		
+		<!-- <div data-role="popup" id="popupBasic" class="ui-content"> -->
+		<!-- <div data-role="popup" id="popupBasic" class="ui-content" data-dismissible="false"> -->
+		<div data-role="popup" id="popupBasic" class="ui-content" data-dismissible="false" data-theme="e" data-overlay-theme="a">
+			<p>Popup Widget 입니다.</p>
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext"
+				class="ui-btn-left">Close</a>
+		</div>
+		
+		<a href="#popupBasic" data-rel="popup" data-role="button">Popup Widget</a>
+		<a href="#popupBasic" data-rel="popup" data-role="button" data-transition="fade">Popup Widget</a>
 
 		<!-- content end -->
 
