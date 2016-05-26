@@ -33,8 +33,10 @@
             <div data-role="content">
             	<a href="http://m.egovframe.go.kr/mguide3.5" data-role="button" target="home">외부 링크</a>
             	<br>
+				<a href="/internalLinkPage.do" data-role="button" data-ajax="true">도메인 내부 링크</a>
 				<a href="/internalLinkPage.do" data-role="button" data-ajax="false">도메인 내부 링크</a>
 				<a href="/internalLinkPage.do" data-role="button" data-transition="pop">도메인 내부 링크</a>
+				<a href="/internalLinkPage.do" data-role="button" data-transition="pop" data-ajax="false">도메인 내부 링크</a>
 				<br>
 				<a href="#sub" data-role="button">페이지 내부 링크</a>
 				<a href="#sub" data-role="button" data-rel="dialog">페이지 내부 링크</a>
